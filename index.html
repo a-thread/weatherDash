@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Materialize Styling-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Font Awesome-->
+    <script src="https://kit.fontawesome.com/11423f6804.js" crossorigin="anonymous"></script>
+    <!-- Local Style Sheet -->
+    <link rel="local stylesheet" href="assets/style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <title>Aiden's Weather API</title>
+</head>
+
+<!-- Navbar w/ logo -->
+<nav>
+    <div class="nav-wrapper col s12">
+        <a href="#" class="brand-logo center">Weather Dashboard</a>
+    </div>
+</nav>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m5 l4 sidebar">
+                <!-- Sidebar area -->
+                <div class="card">
+                    <div class="card-content">
+                        <!-- search title -->
+                        <div class="card-title">
+                            <h6>Search your city here:</h6>
+                        </div>
+                        <div class="row search-bar">
+                            <form>
+                                <!-- search form input -->
+                                <div class="input-field col l9 m9 s9">
+                                    <input id="city" type="search" required>
+                                    <label for="search"></label>
+                                </div>
+                                <!-- search form button -->
+                                <div class="input-field col l2 m2 s2">
+                                    <button class="btn waves-effect waves-light searchBtn" type="submit" name="action">
+                                        <i class="fab fa-searchengin"></i>
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- locations collection -->
+                    <div class="collection">
+                    </div>
+                </div>
+            </div>
+            <div class="col s12 m7 l8">
+                <div class="card main-content">
+                    <div class="card-content">
+                        <div class="card-title">
+                            <div class="row location-title">
+                                <h3 class="city-title col s6">Portland</h3>
+                                <img class="title-icon col s6" src="">
+                                <p class="date col s12"></p>
+                            </div>
+                        </div>
+                        <div class="card-body location-specs">
+                            <p class="title-temp">Temperature: </p>
+                            <p class="title-hum">Humidity: </p>
+                            <p class="title-wind">Windspeed: </p>
+                            <p class="title-uv">UV Index: </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card forecast">
+                    <div class="card-content">
+                        <div class="card-title forecast-title">
+                            <h5>5 Day Forecast</h5>
+                        </div>
+                        <div class="row card-content">
+                            <div class="col s12 m4 l2 forecast-content">
+                                <div class="card-content day1">
+                                    <p class="date"></p>
+                                    <div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
+                                    <p class="temp"></p>
+                                    <p class="humidity"></p>
+                                </div>
+                            </div>
+                            <div class="col s12 m4 l2 forecast-content">
+                                <div class="card-content day2">
+                                    <p class="date"></p>
+                                    <div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
+                                    <p class="temp"></p>
+                                    <p class="humidity"></p>
+                                </div>
+                            </div>
+                            <div class="col s12 m4 l2 forecast-content">
+                                <div class="card-content day3">
+                                    <p class="date"></p>
+                                    <div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
+                                    <p class="temp"></p>
+                                    <p class="humidity"></p>
+                                </div>
+                            </div>
+                            <div class="col s12 m4 l2 forecast-content">
+                                <div class="card-content day4">
+                                    <p class="date"></p>
+                                    <div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
+                                    <p class="temp"></p>
+                                    <p class="humidity"></p>
+                                </div>
+                            </div>
+                            <div class="col s12 m4 l2 forecast-content last">
+                                <div class="card-content day5">
+                                    <p class="date"></p>
+                                    <div id="icon"><img id="wicon" src="" alt="Weather icon"></div>
+                                    <p class="temp"></p>
+                                    <p class="humidity"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Script Links -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/script.js"></script>
+</body>
+
+</html>

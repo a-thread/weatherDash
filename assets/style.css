@@ -1,0 +1,100 @@
+/* Font and Spacing */
+body {
+  font-family: "Quicksand", sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1280px;
+  width: 90%;
+}
+
+/* title stylings */
+nav {
+  font-weight: 600;
+  line-height: 2rem;
+  padding-top: 1.5rem;
+  padding-bottom: 0rem;
+  height: 75px;
+}
+
+/* Sidebar */
+div.sidebar,
+div.main-content {
+  margin-top: 1.5rem;
+}
+
+.search-bar {
+  margin-bottom: 0rem;
+  padding-bottom: 0rem;
+}
+
+div.collection {
+  font-weight: 600;
+}
+
+h6 {
+  font-weight: 800;
+}
+
+/* Main Content */
+div.location-title,
+div.forecast-title {
+  border-bottom: 2px solid #a0a0a0;
+  border-top: 0rem;
+  font-weight: 800;
+}
+
+div.location-title {
+  /* margin-bottom: 0rem;
+  padding-bottom: 0rem;
+  margin-top: 0rem;
+  padding-top: 0rem; */
+  line-height: normal;
+}
+
+.title-icon {
+  height: 5rem;
+  max-width: auto;
+  /* visibility: hidden; */
+}
+
+h5 {
+  margin-top: 3rem;
+}
+
+/* 5 Day Forecast */
+.forecast {
+  /* visibility: hidden; */
+}
+.forecast-content {
+  background-color: #0277bd;
+  margin-right: 1.75rem;
+  margin-bottom: 0.75rem;
+  color: whitesmoke;
+}
+
+.last {
+  margin-right: 0rem;
+}
+
+p {
+  font-weight: 600;
+}
+
+/* Responsiveness for smaller screens */
+@media (max-width: 1300px) {
+  .forecast-content {
+    margin-right: 0.75rem;
+  }
+}
+
+@media (max-width: 570px) {
+  nav {
+    min-height: 90px;
+    padding-top: 1rem;
+  }
+  .forecast-content {
+    margin-bottom: 0.75rem;
+  }
+}
