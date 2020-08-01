@@ -11,11 +11,16 @@ body {
 
 /* nav */
 nav {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: center;
+  height: 80px;
+  background-color: #0277bd;
+}
+
+h4.logo {
   font-weight: 600;
-  line-height: 2rem;
-  padding-top: 1.5rem;
-  padding-bottom: 0rem;
-  height: 75px;
 }
 
 /* Sidebar */
@@ -30,15 +35,27 @@ div.main-content {
   padding-bottom: 0rem;
 }
 
+button.searchBtn {
+  background-color: #01579b;
+  height: 4rem;
+  width: 4rem;
+}
+
 div.collection {
   font-weight: 600;
+  text-align: center;
 }
 
 h6 {
   font-weight: 800;
 }
+
 h6.recent-searches {
   padding-left: 1.5rem;
+}
+
+a.history {
+  font-size: 18px;
 }
 
 /* Main Content */
@@ -47,6 +64,7 @@ h3.city-title,
 h4.forecast-title {
   border-bottom: 2px solid #a0a0a0;
   border-top: 0rem;
+  border-color: lightslategray;
   font-weight: 800;
   margin-top: 0rem;
   padding-bottom: 1rem;
@@ -75,9 +93,6 @@ img.title-icon {
 }
 
 /* 5 Day Forecast */
-h4.forecast-title {
-}
-
 #forecast {
   display: flex;
   flex-direction: row;
@@ -86,16 +101,16 @@ h4.forecast-title {
 }
 
 .forecast-content {
-  background-color: #0277bd;
+  background-color: #039be5;
   margin-right: 1.75rem;
   margin-bottom: 0.75rem;
   color: whitesmoke;
   width: auto;
+  text-align: center;
 }
 
-h7.card-title {
+.card-title {
   font-weight: 800;
-  text-align: center;
 }
 
 p {
@@ -104,10 +119,6 @@ p {
 
 /* Responsiveness for smaller screens */
 @media (max-width: 800px) {
-  nav {
-    min-height: 90px;
-    padding-top: 1rem;
-  }
   div.location-title {
     flex-wrap: wrap;
     justify-content: center;
@@ -115,13 +126,16 @@ p {
   h3.city-title {
     text-align: center;
   }
+  .forecast-title {
+    text-align: center;
+  }
   #forecast {
     display: flex;
     flex-direction: column;
+    text-align: center;
   }
   .forecast-content {
     margin-bottom: 0.75rem;
     width: auto;
-    text-align: center;
   }
 }

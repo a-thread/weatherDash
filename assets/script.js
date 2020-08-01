@@ -1,27 +1,7 @@
 $(document).ready(function () {
   const momentDate = moment().format("(M/D/YYYY)"); // current day
 
-  $(".searchBtn").on("click", function () {
-    var cityInput = $("#city").val(); // getting
-
-    makeRow(cityInput);
-
-    getCoordinates(cityInput);
-
-    $("#city").val(""); // clearing searchbar text
-  });
-
-  function makeRow(text) {
-    var li = $("<a>").addClass("collection-item history").text(text);
-    $(".collection").prepend(li);
-  }
-
-  $(".history").on("click", "li", function () {
-    getCoordinates($(this).text());
-    console.log("click");
-  });
-
-  // Function to get Coordinates
+  // Getting Coordinates from current day api
   function getCoordinates(cityInput) {
     const queryURL =
       "https://api.openweathermap.org/data/2.5/weather?zip=" +
@@ -30,8 +10,9 @@ $(document).ready(function () {
 
     $.get(queryURL).then(function (response) {
       if (history.indexOf(cityInput) === -1) {
-        history.push(cityInput);
-        window.localStorage.setItem("history", JSON.stringify(history));
+        // preventing duplicate storage
+        history.push(cityInput); // adding new input to history array
+        window.localStorage.setItem("history", JSON.stringify(history)); // setting to local storage
       }
       const lat = response.coord.lat; // latitude
       const lon = response.coord.lon; // longitude
@@ -40,14 +21,19 @@ $(document).ready(function () {
       $("h5.date").text(momentDate); // displaying date
 
       // setting icon on title page
-      $(".title-icon").attr("src", [
-        "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png",
-      ]).attr("alt", response.weather[0].description);
+      $(".title-icon")
+        .attr("src", [
+          "http://openweathermap.org/img/w/" +
+            response.weather[0].icon +
+            ".png",
+        ]) // with descriptions
+        .attr("alt", response.weather[0].description);
 
       getWeather(lat, lon);
     });
   }
 
+  // function to get most of the weather info from LAT & LON
   function getWeather(lat, lon) {
     var queryUrl =
       "https://api.openweathermap.org/data/2.5/onecall?lat=" +
@@ -57,16 +43,16 @@ $(document).ready(function () {
       "&apikey=955452fde6d16eea4b0e62b34551cd90&units=imperial";
 
     $.get(queryUrl).then(function (response) {
-      var tempEl = $("<h6>")
+      var tempEl = $("<h6>") // current temp
         .addClass("city-temp")
-        .text("Temperature: " + response.current.temp + "° F"); // temp
-      var humEl = $("<h6>")
+        .text("Temperature: " + response.current.temp + "° F");
+      var humEl = $("<h6>") // current humidity
         .addClass("city-hum")
-        .text("Humidity: " + response.current.humidity + "%"); // humidity
-      var windEl = $("<h6>")
+        .text("Humidity: " + response.current.humidity + "%");
+      var windEl = $("<h6>") // current wind speed
         .addClass("city-wind")
         .text("Wind Speed: " + response.current.wind_speed + "MPH"); // wind speed
-      var uviData = response.current.uvi; // UVI data
+      var uviData = response.current.uvi; // current UVI data
       var uviTitle = $("<h6>").addClass("city-uviTitle").text("UV Index:  "); // UVI label
       var uviBtn = $("<a>").addClass("btn-small").text(uviData); // UVI button
 
@@ -82,7 +68,7 @@ $(document).ready(function () {
         uviBtn.addClass("red");
       }
 
-      // appending current elements to title card
+      // appending current weather data elements to title card
       $(".location-specs")
         .append(tempEl, humEl, windEl)
         .append(uviTitle.append(uviBtn));
@@ -95,11 +81,14 @@ $(document).ready(function () {
         var cardTitle = $("<h7>").addClass("card-title").text(time); // setting title
 
         // getting & setting icon code
-        var cardIcon = $("<img>").attr("src", [
-          "http://openweathermap.org/img/w/" +
-            response.daily[i].weather[0].icon +
-            ".png",
-        ]).attr("alt", response.daily[i].weather.description);
+        var cardIcon = $("<img>")
+          .addClass("card-icon")
+          .attr("src", [
+            "http://openweathermap.org/img/w/" +
+              response.daily[i].weather[0].icon +
+              ".png",
+          ]) // with descriptions
+          .attr("alt", response.daily[i].weather.description);
 
         // card temp
         var cardTemp = $("<p>")
@@ -124,11 +113,33 @@ $(document).ready(function () {
     });
   }
 
-  // making buttons for each recent search
+  // function to make buttons beneath searchbar
+  function makeRow(text) {
+    var li = $("<a>").addClass("collection-item history").text(text);
+    $(".collection").prepend(li);
+  }
+
+  // making buttons for each recent search input
   var history = JSON.parse(window.localStorage.getItem("history")) || [];
   for (var i = 0; i < history.length; i++) {
     makeRow(history[i]);
   }
+
+  // search button 'click' function
+  $(".searchBtn").on("click", function () {
+    var cityInput = $("#city").val(); // getting search input
+
+    if (!cityInput || NaN(cityInput)) {
+      // if input is empty or contains numbers, nothing will happen
+      return false;
+    } else {
+      makeRow(cityInput); // otherwise a button will be made with the new input
+    }
+
+    getCoordinates(cityInput); // getting lat & lon from zipcode
+
+    $("#city").val(""); // clearing input text
+  });
 
   // recent search button links
   $("a.history").on("click", function () {
@@ -137,5 +148,5 @@ $(document).ready(function () {
     getCoordinates($(this).text()); // displaying new forecast & title card
   });
 
-  getCoordinates('04070');
+  getCoordinates("04070");
 });
