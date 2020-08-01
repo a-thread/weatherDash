@@ -119,8 +119,7 @@ $(document).ready(function () {
     $(".collection").prepend(li);
   }
 
-  // precenting anything other than numbers to be allowed in the textbox
-  // source: 
+  // preventing anything other than numbers to be allowed in the textbox
   $(".numbersOnly").keyup(function () {
     this.value = this.value.replace(/[^0-9\.]/g, "");
   });
@@ -134,10 +133,6 @@ $(document).ready(function () {
   // search button 'click' function
   $(".searchBtn").on("click", function () {
     var cityInput = $("#city").val(); // getting search input
-
-    localStorage.setItem("history", JSON.stringify(history)); // setting to local storage
-
-    history.push(cityInput); // pushing into array
 
     makeRow(cityInput); // making a button
 

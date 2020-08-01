@@ -60,11 +60,6 @@ h6.recent-searches {
   padding-left: 1.5rem;
 }
 
-/* Adapted from: https://stackoverflow.com/questions/36205427/limit-number-of-li-elements-in-ol-and-ul/36205997 */
-a.history:nth-of-type(1n + 5) {
-  display: none;
-}
-
 a.history {
   font-size: 18px;
 }
