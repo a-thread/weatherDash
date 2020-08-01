@@ -2,18 +2,13 @@ $(document).ready(function () {
   const momentDate = moment().format("(M/D/YYYY)"); // current day
 
   // Getting Coordinates from current day api
-  function getCoordinates(cityInput) {
+  function getCoordinates(zipInput) {
     const queryURL =
       "https://api.openweathermap.org/data/2.5/weather?zip=" +
-      cityInput +
+      zipInput +
       "&apikey=955452fde6d16eea4b0e62b34551cd90&units=imperial";
 
     $.get(queryURL).then(function (response) {
-      if (history.indexOf(cityInput) === -1) {
-        // preventing duplicate storage
-        history.push(cityInput); // adding new input to history array
-        window.localStorage.setItem("history", JSON.stringify(history)); // setting to local storage
-      }
       const lat = response.coord.lat; // latitude
       const lon = response.coord.lon; // longitude
 
@@ -117,6 +112,7 @@ $(document).ready(function () {
   function makeRow(text) {
     var li = $("<a>").addClass("collection-item history").text(text);
     $(".collection").prepend(li);
+    history = history.slice(0, 5);
   }
 
   // preventing anything other than numbers to be allowed in the textbox
@@ -130,26 +126,33 @@ $(document).ready(function () {
     makeRow(history[i]);
   }
 
-  // search button 'click' function
+  // search button listener
   $(".searchBtn").on("click", function () {
-    var cityInput = $("#city").val(); // getting search input
+    var zipInput = $("#city").val(); // getting search input
 
-    makeRow(cityInput); // making a button
+    if (history.indexOf(zipInput) === -1) {
+      // preventing duplicate storage
+      history.push(zipInput); // adding new input to history array
+      window.localStorage.setItem("history", JSON.stringify(history)); // setting to local storage
+    }
 
-    $("#forecast").empty(); // clearing previous forecast cards
-    $(".location-specs").empty(); // clearing previous title card
+    makeRow(zipInput); // making a button
 
-    getCoordinates(cityInput); // getting lat & lon from zipcode
+    $("#forecast").empty(); // clearing forecast cards
+    $(".location-specs").empty(); // clearing title card
+
+    getCoordinates(zipInput); // getting lat & lon from zipcode
 
     $("#city").val(""); // clearing input text
   });
 
-  // recent search button links
+  // recent search links
   $("a.history").on("click", function () {
     $("#forecast").empty(); // clearing previous forecast cards
     $(".location-specs").empty(); // clearing previous title card
     getCoordinates($(this).text()); // displaying new forecast & title card
   });
 
+  // placeholder location
   getCoordinates("04070");
 });
