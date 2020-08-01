@@ -6,10 +6,10 @@ body {
 .container {
   margin: 0 auto;
   max-width: 1280px;
-  width: 90%;
+  width: 95%;
 }
 
-/* title stylings */
+/* nav */
 nav {
   font-weight: 600;
   line-height: 2rem;
@@ -22,6 +22,7 @@ nav {
 div.sidebar,
 div.main-content {
   margin-top: 1.5rem;
+  border-top: 0rem;
 }
 
 .search-bar {
@@ -36,6 +37,9 @@ div.collection {
 h6 {
   font-weight: 800;
 }
+h6.recent-searches{
+  padding-left: 1.5rem;
+}
 
 /* Main Content */
 div.location-title,
@@ -43,39 +47,50 @@ div.forecast-title {
   border-bottom: 2px solid #a0a0a0;
   border-top: 0rem;
   font-weight: 800;
+  margin-top: 0rem;
 }
 
 div.location-title {
-  /* margin-bottom: 0rem;
-  padding-bottom: 0rem;
+  display: flex;
+  flex-direction: row;
+  padding-top: 0rem;
   margin-top: 0rem;
-  padding-top: 0rem; */
-  line-height: normal;
+}
+
+.city-title {
+  margin-top: 0rem;
+  padding-top: 0rem;
+}
+
+.date {
+  padding-top: .5rem;
 }
 
 .title-icon {
-  height: 5rem;
+  height: 4rem;
   max-width: auto;
-  /* visibility: hidden; */
-}
-
-h5 {
-  margin-top: 3rem;
+  padding-top: 0rem;
+  margin-top: 0rem;
 }
 
 /* 5 Day Forecast */
-.forecast {
-  /* visibility: hidden; */
+#forecast {
+  display: flex;
+  flex-direction: row;
+
 }
+
 .forecast-content {
   background-color: #0277bd;
   margin-right: 1.75rem;
   margin-bottom: 0.75rem;
   color: whitesmoke;
+  width: auto;
 }
 
-.last {
-  margin-right: 0rem;
+h7.card-title {
+  font-weight: 800;
+  text-align: center;
 }
 
 p {
@@ -94,7 +109,13 @@ p {
     min-height: 90px;
     padding-top: 1rem;
   }
+  #forecast {
+    display: flex;
+    flex-direction: column;
+  }
   .forecast-content {
     margin-bottom: 0.75rem;
+    width: auto;
+    text-align: center;
   }
 }
