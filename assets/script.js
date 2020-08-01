@@ -119,6 +119,12 @@ $(document).ready(function () {
     $(".collection").prepend(li);
   }
 
+  // precenting anything other than numbers to be allowed in the textbox
+  // source: 
+  $(".numbersOnly").keyup(function () {
+    this.value = this.value.replace(/[^0-9\.]/g, "");
+  });
+
   // making buttons for each recent search input
   var history = JSON.parse(window.localStorage.getItem("history")) || [];
   for (var i = 0; i < history.length; i++) {
@@ -129,12 +135,14 @@ $(document).ready(function () {
   $(".searchBtn").on("click", function () {
     var cityInput = $("#city").val(); // getting search input
 
-    if (!cityInput || NaN(cityInput)) {
-      // if input is empty or contains numbers, nothing will happen
-      return false;
-    } else {
-      makeRow(cityInput); // otherwise a button will be made with the new input
-    }
+    localStorage.setItem("history", JSON.stringify(history)); // setting to local storage
+
+    history.push(cityInput); // pushing into array
+
+    makeRow(cityInput); // making a button
+
+    $("#forecast").empty(); // clearing previous forecast cards
+    $(".location-specs").empty(); // clearing previous title card
 
     getCoordinates(cityInput); // getting lat & lon from zipcode
 

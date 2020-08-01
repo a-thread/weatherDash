@@ -1,6 +1,7 @@
 /* Font and Spacing */
 body {
   font-family: "Quicksand", sans-serif;
+  background-color: lightsteelblue;
 }
 
 .container {
@@ -16,7 +17,7 @@ nav {
   flex-direction: row;
   justify-content: center;
   height: 80px;
-  background-color: #0277bd;
+  background-color: #01579b;
 }
 
 h4.logo {
@@ -30,15 +31,20 @@ div.main-content {
   border-top: 0rem;
 }
 
-.search-bar {
+form.search-bar {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  justify-content: space-evenly;
   margin-bottom: 0rem;
   padding-bottom: 0rem;
 }
 
 button.searchBtn {
   background-color: #01579b;
-  height: 4rem;
+  height: 3rem;
   width: 4rem;
+  padding: 0rem;
 }
 
 div.collection {
@@ -52,6 +58,11 @@ h6 {
 
 h6.recent-searches {
   padding-left: 1.5rem;
+}
+
+/* Adapted from: https://stackoverflow.com/questions/36205427/limit-number-of-li-elements-in-ol-and-ul/36205997 */
+a.history:nth-of-type(1n + 5) {
+  display: none;
 }
 
 a.history {
@@ -123,9 +134,9 @@ p {
     flex-wrap: wrap;
     justify-content: center;
   }
-  h3.city-title {
-    text-align: center;
-  }
+  h3.city-title,
+  .search-card,
+  .recent-searches,
   .forecast-title {
     text-align: center;
   }

@@ -31,26 +31,24 @@
             <div class="col s12 m5 l3 sidebar">
                 <!-- Sidebar area -->
                 <div class="card">
-                    <div class="card-content">
+                    <div class="card-content search-card">
                         <!-- search title -->
                         <div class="card-title">
                             <h6>Search your city by zip code:</h6>
                         </div>
-                        <div class="row search-bar">
-                            <form>
-                                <!-- search form input -->
-                                <div class="input-field col l8 m8 s8">
-                                    <input id="city" type="search" required>
-                                    <label for="zip-code search"></label>
-                                </div>
-                                <!-- search form button -->
-                                <div class="input-field col l2 m2 s2">
-                                    <button class="btn searchBtn" type="submit" name="action">
-                                        <i class="fas fa-search-location"></i>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                        <form class="row search-bar">
+                            <!-- search form input -->
+                            <div class="input-field">
+                                <input class="numbersOnly" id="city" type="search" required>
+                                <label for="zip-code search"></label>
+                            </div>
+                            <!-- search form button -->
+                            <div class="input-field">
+                                <button class="btn searchBtn" type="submit" name="action">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
                     </div>
                     <!-- recent search title -->
                     <h6 class="recent-searches">recent searches:</h6>
