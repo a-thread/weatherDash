@@ -138,7 +138,7 @@ p {
   #forecast {
     display: flex;
     flex-direction: column;
-    text-align: center;
+    justify-content: center;
   }
   .forecast-content {
     margin-bottom: 0.75rem;

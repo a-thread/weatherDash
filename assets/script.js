@@ -110,7 +110,7 @@ $(document).ready(function () {
 
   // function to make buttons beneath searchbar
   function makeRow(text) {
-    var li = $("<a>").addClass("collection-item history").text(text);
+    var li = $("<a>").addClass("collection-item history").attr("role", "link").text(text);
     $(".collection").prepend(li);
   }
 
@@ -132,11 +132,10 @@ $(document).ready(function () {
 
     if (zipInput === "") {
       alert("must enter a zip code");
-    } else [history.indexOf(zipInput) === -1]
-      // preventing duplicate storage
+    } else 
       history.push(zipInput); // adding new input to history array
       window.localStorage.setItem("history", JSON.stringify(history)); // setting to local storage
-      
+      makeRow(zipInput)     
 
       $("#forecast").empty(); // clearing forecast cards
       $(".location-specs").empty(); // clearing title card
@@ -154,6 +153,6 @@ $(document).ready(function () {
   });
 
   // placeholder location
-  getCoordinates(history[history.length - 2]);
+  getCoordinates(history[history.length - 1]);
   console.log(history);
 });
