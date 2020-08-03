@@ -25,4 +25,4 @@ For our first project we were asked to use a CSS framework other than Bootstrap 
 This really pushed my boundaries because before embarking on this assignment, I hadn't successfully saved anything to local storage. I still have a lot to learn but I feel like I have a better grasp on how local storage works and how to use it to power apps such as these. 
 
 ### jQuery
-I really enjoyed this assignment as it pushed me to focus on organization as I traversed the DOM. I feel like I'm getting a better understanding of how to organize my js files so that.
+I really enjoyed this assignment as it pushed me to focus on organization as I traversed the DOM. I feel like I'm getting a better understanding of how to organize my js files so that everything is easy to read and just makes general sense.
