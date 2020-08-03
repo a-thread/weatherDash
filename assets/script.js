@@ -28,7 +28,7 @@ $(document).ready(function () {
     });
   }
 
-  // function to get most of the weather info from LAT & LON
+  // getting current and future weather data via LAT & LON
   function getWeather(lat, lon) {
     var queryUrl =
       "https://api.openweathermap.org/data/2.5/onecall?lat=" +
@@ -110,7 +110,10 @@ $(document).ready(function () {
 
   // function to make buttons beneath searchbar
   function makeRow(text) {
-    var li = $("<a>").addClass("collection-item history").attr("role", "link").text(text);
+    var li = $("<a>")
+      .addClass("collection-item history")
+      .attr("role", "link")
+      .text(text);
     $(".collection").prepend(li);
   }
 
@@ -132,17 +135,17 @@ $(document).ready(function () {
 
     if (zipInput === "") {
       alert("must enter a zip code");
-    } else 
-      history.push(zipInput); // adding new input to history array
-      window.localStorage.setItem("history", JSON.stringify(history)); // setting to local storage
-      makeRow(zipInput)     
+      reload();
+    } else history.push(zipInput); // adding new input to history array
+    window.localStorage.setItem("history", JSON.stringify(history)); // setting to local storage
+    makeRow(zipInput);
 
-      $("#forecast").empty(); // clearing forecast cards
-      $(".location-specs").empty(); // clearing title card
+    $("#forecast").empty(); // clearing forecast cards
+    $(".location-specs").empty(); // clearing title card
 
-      getCoordinates(zipInput); // getting lat & lon from zipcode
+    getCoordinates(zipInput); // getting lat & lon from zipcode
 
-      $("#city").val(""); // clearing input text
+    $("#city").val(""); // clearing input text
   });
 
   // recent search links
@@ -152,7 +155,6 @@ $(document).ready(function () {
     getCoordinates($(this).text()); // displaying new forecast & title card
   });
 
-  // placeholder location
+  // displaying last searched city
   getCoordinates(history[history.length - 1]);
-  console.log(history);
 });
