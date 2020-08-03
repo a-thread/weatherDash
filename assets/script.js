@@ -112,7 +112,6 @@ $(document).ready(function () {
   function makeRow(text) {
     var li = $("<a>").addClass("collection-item history").text(text);
     $(".collection").prepend(li);
-    history = history.slice(0, 5);
   }
 
   // preventing anything other than numbers to be allowed in the textbox
@@ -122,7 +121,8 @@ $(document).ready(function () {
 
   // making buttons for each recent search input
   var history = JSON.parse(window.localStorage.getItem("history")) || [];
-  for (var i = 0; i < history.length; i++) {
+  for (var i = [history.length - 5]; i < history.length; i++) {
+    // limiting the buttons to 5
     makeRow(history[i]);
   }
 
@@ -130,20 +130,20 @@ $(document).ready(function () {
   $(".searchBtn").on("click", function () {
     var zipInput = $("#city").val(); // getting search input
 
-    if (history.indexOf(zipInput) === -1) {
+    if (zipInput === "") {
+      alert("must enter a zip code");
+    } else [history.indexOf(zipInput) === -1]
       // preventing duplicate storage
       history.push(zipInput); // adding new input to history array
       window.localStorage.setItem("history", JSON.stringify(history)); // setting to local storage
-    }
+      
 
-    makeRow(zipInput); // making a button
+      $("#forecast").empty(); // clearing forecast cards
+      $(".location-specs").empty(); // clearing title card
 
-    $("#forecast").empty(); // clearing forecast cards
-    $(".location-specs").empty(); // clearing title card
+      getCoordinates(zipInput); // getting lat & lon from zipcode
 
-    getCoordinates(zipInput); // getting lat & lon from zipcode
-
-    $("#city").val(""); // clearing input text
+      $("#city").val(""); // clearing input text
   });
 
   // recent search links
@@ -154,5 +154,6 @@ $(document).ready(function () {
   });
 
   // placeholder location
-  getCoordinates("04070");
+  getCoordinates(history[history.length - 2]);
+  console.log(history);
 });
