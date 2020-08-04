@@ -20,8 +20,11 @@ nav {
   background-color: #01579b;
 }
 
-h4.logo {
+h1.logo {
   font-weight: 600;
+  font-size: 34px;
+  line-height: normal;
+  margin-top: 1rem;
 }
 
 /* Sidebar */

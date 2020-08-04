@@ -73,7 +73,7 @@ $(document).ready(function () {
         var time = moment.unix(response.daily[i].dt).format("ddd"); // getting date from API and setting format
 
         var card = $("<div>").addClass("card"); // creating card
-        var cardTitle = $("<h7>").addClass("card-title").text(time); // setting title
+        var cardTitle = $("<h7>").addClass("card-title header").text(time); // setting title
 
         // getting & setting icon code
         var cardIcon = $("<img>")
@@ -83,7 +83,7 @@ $(document).ready(function () {
               response.daily[i].weather[0].icon +
               ".png",
           ]) // with descriptions
-          .attr("alt", response.daily[i].weather.description);
+          .attr("alt", response.daily[i].weather[0].description);
 
         // card temp
         var cardTemp = $("<p>")
