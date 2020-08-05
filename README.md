@@ -2,7 +2,7 @@
 
 ### [My Weather Dashboard](https://a-thread.github.io/Weather-API-Aiden/)
 
-![demo of site](/assets/images/demo.gif) ![demonstrating responsiveness](/assets/images/resp.gif)
+![demo of site](/assets/images/demo.gif)
 
 ### Assignment Criteria
 The assignment was to create a weather dashboard using the OpenWeather API. The criteria:
@@ -27,4 +27,4 @@ Originally I made the site look more similar to the example:
 
 Since I had some extra time this week, I thought I would develop it a bit further and make an app that I would want to use outside of this class. I added a custom logo, put the search bar in the nav and consolodated the recent searches into a drop down to save space. In this exercise I realized how helpful flexbox is. Trying to make this mobile-first but still look polished on a larger screen proved to be a bit more complicated for me than our previous activities. 
 
-*If you have any questions email [aiden.threadgoode@gmail.com](mailto:aiden.threadgoode@gmail.com)*
+*If you have any questions email [aiden.threadgoode@gmail.com](mailto:aiden.threadgoode@gmail.com).*
