@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Materialize -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <!-- Font Awesome-->
-    <script src="https://kit.fontawesome.com/11423f6804.js" crossorigin="anonymous"></script>
+    <!-- Material Icons-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Local Style Sheet -->
     <link rel="local stylesheet" href="assets/style.css">
     <!-- Google Fonts -->
@@ -18,62 +18,62 @@
 </head>
 
 <!-- Navbar -->
-<nav>
-    <div class="nav-wrapper col s12">
-        <!-- App Title -->
-        <h1 class="logo">Weather Dashboard</h1>
-    </div>
-</nav>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <!-- Sidebar area -->
-            <div class="col s12 m5 l3 sidebar">
-                <div class="card">
-                    <div class="card-content search-card">
-                        <!-- search title -->
-                        <div class="card-title">
-                            <h6>Search your city by zip code:</h6>
-                        </div>
-                        <form class="row search-bar">
-                            <!-- search form input -->
-                            <div class="input-field">
-                                <input class="numbersOnly" id="city" type="search" required>
-                                <label for="zip-code search"></label>
-                            </div>
-                            <!-- search form button -->
-                            <div class="input-field">
-                                <button class="btn searchBtn" type="submit" name="action" alt="search">
-                                    <i class="fas fa-paper-plane"></i>
-                                </button>
-                            </div>
-                        </form>
+    <div class="nav row">
+        <div class="nav-wrapper">
+            <div class="col s12 l2 logo-col">
+                <a class="brand-logo"><img class="responsive-img" id="logo" src="assets/images/weatherDash.png" /></a>
+            </div>
+            <form>
+                <div class="row sidebar">
+                    <h5 class="col s12 l4 search-title">Search your city by zip code:</h5>
+                    <div class="input-field col s6 l3">
+                        <input id="search" type="search" required>
+                        <label for="search"></label>
+                        <i class="material-icons">close</i>
                     </div>
-                    <!-- recent search title -->
-                    <h6 class="recent-searches">recent searches:</h6>
-                    <!-- recent search btn collection -->
-                    <div class="collection">
+                    <div class="input-field col s2 l1">
+                        <button class="btn searchBtn" type="submit" name="action" alt="search">
+                            <i class="material-icons">search</i>
+                        </button>
+                    </div>
+                    <div class="droppdown col s2 l1">
+                        <!-- Dropdown Trigger -->
+                        <a class='dropdown-trigger btn' data-target='dropdown1'>recent searches</a>
+
+                        <!-- Dropdown Structure -->
+                        <ul id='dropdown1' class='dropdown-content collection'>
+                        </ul>
                     </div>
                 </div>
-            </div>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
             <!-- Main Content -->
-            <div class="col s12 m7 l9">
-                <div class="card main-content">
+            <div class="col s12">
+                <div class="card current-weather">
                     <div class="card-content">
                         <div class="row location-title">
                             <!-- city name -->
-                            <h3 class="city-title"></h3>
-                            <!-- today's date -->
-                            <h5 class="date col"></h5>
-                            <!-- current weather icon -->
-                            <img class="title-icon" src="">
+                            <h2 class="city-title">
+                                </h3>
+                                <!-- today's date -->
+                                <h5 class="date col"></h5>
+                                <!-- current weather icon -->
+                                <img class="title-icon" src="">
                         </div>
                         <!-- current weather specs -->
-                        <div class="location-specs">
-                        </div>
+                        <ul class="collection location-specs1">
+                        </ul>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col s12">
                 <!-- Forecast Card -->
                 <div class="card forecast">
                     <div class="card-content">
@@ -86,13 +86,14 @@
                 </div>
             </div>
         </div>
-    </div>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <!-- Moment -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <!-- local script -->
-    <script src="assets/script.js"></script>
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <!-- Moment -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+        <!-- Materialize.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <!-- local script -->
+        <script src="assets/script.js"></script>
 </body>
 
 </html>
