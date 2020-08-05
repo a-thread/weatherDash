@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!-- Material Icons-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <!-- Local Style Sheet -->
     <link rel="local stylesheet" href="assets/style.css">
     <!-- Google Fonts -->
@@ -26,10 +29,10 @@
                 <a class="brand-logo"><img class="responsive-img" id="logo" src="assets/images/weatherDash.png" /></a>
             </div>
             <form>
-                <div class="row sidebar">
+                <div class="row searchbar">
                     <h5 class="col s12 l4 search-title">Search your city by zip code:</h5>
                     <div class="input-field col s6 l3">
-                        <input id="search" type="search" required>
+                        <input id="search" type="search">
                         <label for="search"></label>
                         <i class="material-icons">close</i>
                     </div>
@@ -53,21 +56,20 @@
     <div class="container">
         <div class="row">
             <!-- Main Content -->
-            <div class="col s12">
-                <div class="card current-weather">
-                    <div class="card-content">
-                        <div class="row location-title">
-                            <!-- city name -->
-                            <h2 class="city-title">
-                                </h3>
-                                <!-- today's date -->
-                                <h5 class="date col"></h5>
-                                <!-- current weather icon -->
-                                <img class="title-icon" src="">
-                        </div>
+            <div class="card current-weather">
+                <div class="card-content current-card">
+                    <div class="col s12 m3 l3 location-title">
+                        <!-- city name -->
+                        <h2 class="city-title"></h2>
+                        <!-- today's date -->
+                        <h5 class="date col"></h5>
+                        <!-- current weather icon -->
+                        <img class="title-icon" src="">
                         <!-- current weather specs -->
-                        <ul class="collection location-specs1">
-                        </ul>
+                    </div>
+                    <div class="col s12 m9 l9 specs">
+                        <table class="col s12 collection location-specs">
+                        </table>
                     </div>
                 </div>
             </div>
@@ -86,6 +88,7 @@
                 </div>
             </div>
         </div>
+
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <!-- Moment -->
@@ -95,5 +98,6 @@
         <!-- local script -->
         <script src="assets/script.js"></script>
 </body>
+
 
 </html>

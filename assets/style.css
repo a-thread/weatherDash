@@ -2,6 +2,7 @@
 .nav {
   height: auto;
   background-color: #01579b;
+  width: 100%;
 }
 
 div.logo-col {
@@ -24,7 +25,7 @@ h5.search-title {
 }
 
 /* search Bar */
-.sidebar {
+.searchbar {
   padding-top: 2rem;
 }
 
@@ -33,15 +34,10 @@ h5.search-title {
   background-color: whitesmoke;
 }
 
-.search-bar {
-  margin-bottom: 0rem;
-  padding-bottom: 0rem;
-}
-
 /* nav buttons */
 button.searchBtn,
 a.btn {
-  height: 3rem;
+  height: 3.5rem;
   width: fit-content;
 }
 
@@ -53,7 +49,7 @@ a.btn {
 }
 
 i.material-icons {
-  padding-top: 5px;
+  padding-top: 9px;
   font-size: 30px;
 }
 
@@ -85,20 +81,30 @@ div.current-weather {
   border-top: 0rem;
 }
 
+.current-card {
+  display: flex;
+  flex-direction: row;
+}
+
+div.location-specs {
+  flex-direction: column;
+}
+
+i.fas {
+  margin: 1.5rem;
+  margin-top: 0rem;
+  font-size: 30px;
+  color: #01579b;
+  display: flex;
+  flex-direction: column;
+}
+
 div.location-title,
 h2.city-title,
 h4.forecast-title {
-  border-bottom: 2px solid #a0a0a0;
-  border-top: 0rem;
-  border-color: lightslategray;
   font-weight: 700;
   margin-top: 0rem;
   padding-bottom: 1rem;
-}
-
-div.location-title {
-  display: flex;
-  flex-direction: row;
 }
 
 h2.city-title {
@@ -114,20 +120,35 @@ h5.date {
 
 img.title-icon {
   height: 4rem;
-  max-width: 6rem;
+  max-width: 5rem;
   padding-top: 0rem;
   margin-top: 0rem;
+  text-align: center;
 }
 
-li.city-temp,
-li.city-hum,
-li.city-wind,
-li.city-uviTitle {
+td.city-temp,
+td.feels-like,
+td.city-hum,
+td.city-wind,
+td.city-uviTitle {
   font-weight: 600;
-  font-size: 24px;
+  font-size: 20px;
+  text-align: center;
 }
 
 /* 5 Day Forecast */
+.forecast, .current-weather {
+  margin-top: 0rem;
+  padding-top: 0rem;
+  margin-bottom: 0rem;
+  padding-top: 0rem;
+}
+
+.forecast-title {
+  border-bottom: 2px solid #a0a0a0;
+  border-top: 0rem;
+  border-color: lightslategray;
+}
 #forecast {
   display: flex;
   flex-direction: row;
@@ -136,7 +157,7 @@ li.city-uviTitle {
 }
 
 .forecast-content {
-  background-color: #01579b;;
+  background-color: #01579b;
   margin-right: 1.75rem;
   margin-bottom: 0.75rem;
   color: whitesmoke;
@@ -163,41 +184,37 @@ h6.card-hum {
 
 /* Responsiveness for smaller screens */
 @media (max-width: 1000px) {
-  .nav {
+  #forecast{
     display: flex;
     flex-direction: column;
-  }
-  div.logo-col,
-  h5.search-title,
-  div.input-field,
-  div.dropdown {
-    text-align: center;
-  }
-  form.search-bar div.location-title {
+    justify-content: center !important;
     flex-wrap: wrap;
-    justify-content: center;
   }
+  h5.search-title,
   h2.city-title,
   h5.search-card,
   h5.recent-searches,
-  h5.forecast-title {
+  h4.forecast-title,
+  div.input-field,
+  div.dropdown,
+  div.logo-col {
     text-align: center;
-    flex-wrap: wrap;
-  }
-  #forecast {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
   .forecast-content {
     margin-bottom: 0.75rem;
     width: auto;
   }
 }
-@media (max-width: 500px) {
-  div.location-title {
+@media (max-width: 800px) {
+  div.current-card {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     text-align: center;
+  }
+  table.location-specs {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
 }

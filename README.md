@@ -2,7 +2,7 @@
 
 ### [My Weather Dashboard](https://a-thread.github.io/Weather-API-Aiden/)
 
-![demo of site](/assets/images/demo.gif)
+![demo of site](/assets/images/demo.gif) ![demonstrating responsiveness](/assets/images/resp.gif)
 
 ### Assignment Criteria
 The assignment was to create a weather dashboard using the OpenWeather API. The criteria:
@@ -18,12 +18,13 @@ I used two APIs in this project, the Current Weather API and the One Call API. S
 Something my tutor emphasized was reading the documentation of each API before diving in and that was extremely helpful. I think a great example of this was including **units: imperial** in my api calls so that I didn't have to convert the results from Kelvin afterwards.
 
 ### Materialize
-For our first project we were asked to use a CSS framework other than Bootstrap so I decided to use Materialize for this assignment as well to get in some extra practice. This is made me REALLY appreciate Bootstrap's documentation as Materialize's documentation is much more limited. That being said, I think the site turned out really well and I enjoyed learning more about a different framework
+For our first project we were asked to use a CSS framework other than Bootstrap so I decided to use Materialize for this assignment as well to get in some extra practice. This is made me REALLY appreciate Bootstrap's documentation as Materialize is much smaller and has far more limited capabilities. 
 
-### Local Storage
-This really pushed my boundaries because before embarking on this assignment, I hadn't successfully saved anything to local storage. I still have a lot to learn but I feel like I have a better grasp on how local storage works and how to use it to power apps such as these. 
+### Styling & Responsiveness
+Originally I made the site look more similar to the example:
 
-### jQuery
-I really enjoyed this assignment as it pushed me to focus on organization as I traversed the DOM. I feel like I'm getting a better understanding of how to organize my js files so that everything is easier to read and just makes more sense.
+![Original Site](assets/images/site1.gif)
+
+Since I had some extra time this week, I thought I would develop it a bit further and make an app that I would want to use outside of this class. I added a custom logo, put the search bar in the nav and consolodated the recent searches into a drop down to save space. In this exercise I realized how helpful flexbox is. Trying to make this mobile-first but still look polished on a larger screen proved to be a bit more complicated for me than our previous activities. 
 
 *If you have any questions email [aiden.threadgoode@gmail.com](mailto:aiden.threadgoode@gmail.com)*

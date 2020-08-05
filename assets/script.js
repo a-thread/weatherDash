@@ -38,19 +38,25 @@ $(document).ready(function () {
       "&apikey=955452fde6d16eea4b0e62b34551cd90&units=imperial";
 
     $.get(queryUrl).then(function (response) {
-      var tempEl = $("<li>") // current temp
+      var tempEl = $("<td>") // current temp
         .addClass("city-temp collection-item")
-        .text("Temperature: " + response.current.temp + "° F");
-      var humEl = $("<li>") // current humidity
+        .text("Temperature: " + response.current.temp + "° F")
+        .prepend($("<i class='fas fa-thermometer-three-quarters'></i>"));
+      var feelsLike = $("<td>") // feel temp
+        .addClass("feels-like collection-item")
+        .text("Feels Like: " + response.current.feels_like + "° F")
+        .prepend($("<i class='fas fa-thermometer'></i>"));;
+      var humEl = $("<td>") // current humidity
         .addClass("city-hum collection-item")
-        .text("Humidity: " + response.current.humidity + "%");
-      var windEl = $("<li>") // current wind speed
+        .text("Humidity: " + response.current.humidity + "%")
+        .prepend($("<i class='fas fa-hand-holding-water'></i>"));
+      var windEl = $("<td>") // current wind speed
         .addClass("city-wind collection-item")
-        .text("Wind Speed: " + response.current.wind_speed + "MPH"); // wind speed
+        .text("Wind Speed: " + response.current.wind_speed + "MPH")
+        .prepend($("<i class='fas fa-wind'></i>"));
       var uviData = response.current.uvi; // current UVI data
-      var uviTitle = $("<li>").addClass("city-uviTitle").text("UV Index:  "); // UVI label
+      var uviTitle = $("<td>").addClass("city-uviTitle").text("UV Index:  ").prepend($("<i class='fas fa-sun'></i>"));; // UVI label
       var uviBtn = $("<a>").addClass("btn-small").text(uviData); // UVI button
-
       // setting color of UVI btn according to sun safety guidelines
       if (uviData > 0 && uviData < 2) {
         // favorable
@@ -64,8 +70,8 @@ $(document).ready(function () {
       }
 
       // appending current weather data elements to title card
-      $(".location-specs1")
-        .append(tempEl, humEl, windEl)
+      $(".location-specs")
+        .append(tempEl, feelsLike, humEl, windEl)
         .append(uviTitle.append(uviBtn));
 
       // looping through the 5 day forecast
@@ -154,7 +160,7 @@ $(document).ready(function () {
   });
 
   // recent search drop down
-  $('.dropdown-trigger').dropdown();
+  $(".dropdown-trigger").dropdown();
 
   // displaying last searched city
   getCoordinates(history[history.length - 1]);
