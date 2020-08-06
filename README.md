@@ -2,7 +2,7 @@
 
 ### [My Weather Dashboard](https://a-thread.github.io/Weather-API-Aiden/)
 
-![demo of site](/assets/images/demo.gif)
+![demo of site](/assets/images/demo-nl.gif)
 
 ### Assignment Criteria
 The assignment was to create a weather dashboard using the OpenWeather API. The criteria:
