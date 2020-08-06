@@ -72,7 +72,7 @@ a.history {
 /* Current Weather */
 div.container {
   margin: 0 auto;
-  max-width: 1280px;
+  max-width: 1200px;
   width: 95%;
 }
 
@@ -86,8 +86,12 @@ div.current-weather {
   flex-direction: row;
 }
 
-div.location-specs {
-  flex-direction: column;
+div.location-title {
+  order: 1;
+}
+
+div.specs {
+  order: 2;
 }
 
 i.fas {
@@ -184,7 +188,7 @@ h6.card-hum {
 
 /* Responsiveness for smaller screens */
 @media (max-width: 960px) {
-  div.current-card, #forecast {
+  div.current-card, div.location-title, #forecast {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
