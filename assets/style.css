@@ -183,12 +183,17 @@ h6.card-hum {
 }
 
 /* Responsiveness for smaller screens */
-@media (max-width: 1000px) {
-  #forecast{
+@media (max-width: 960px) {
+  div.current-card, #forecast {
     display: flex;
     flex-direction: column;
-    justify-content: center !important;
-    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
+  }
+  table.location-specs {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
   }
   h5.search-title,
   h2.city-title,
@@ -203,18 +208,5 @@ h6.card-hum {
   .forecast-content {
     margin-bottom: 0.75rem;
     width: auto;
-  }
-}
-@media (max-width: 800px) {
-  div.current-card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-  }
-  table.location-specs {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
   }
 }

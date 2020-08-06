@@ -52,7 +52,7 @@ $(document).ready(function () {
         .prepend($("<i class='fas fa-hand-holding-water'></i>"));
       var windEl = $("<td>") // current wind speed
         .addClass("city-wind collection-item")
-        .text("Wind Speed: " + response.current.wind_speed + "MPH")
+        .text("Wind Speed:   " + response.current.wind_speed + " MPH")
         .prepend($("<i class='fas fa-wind'></i>"));
       var uviData = response.current.uvi; // current UVI data
       var uviTitle = $("<td>").addClass("city-uviTitle").text("UV Index:  ").prepend($("<i class='fas fa-sun'></i>"));; // UVI label
