@@ -81,7 +81,7 @@ div.current-weather {
   border-top: 0rem;
 }
 
-.current-card {
+div.current-card {
   display: flex;
   flex-direction: row;
 }
@@ -141,7 +141,8 @@ td.city-uviTitle {
 }
 
 /* 5 Day Forecast */
-.forecast, .current-weather {
+.forecast,
+.current-weather {
   margin-top: 0rem;
   padding-top: 0rem;
   margin-bottom: 0rem;
@@ -188,26 +189,21 @@ h6.card-hum {
 
 /* Responsiveness for smaller screens */
 @media (max-width: 960px) {
-  div.current-card, div.location-title, #forecast {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  .nav,
+  h5.search-title {
     text-align: center;
   }
+  div.current-card,
+  #forecast,
   table.location-specs {
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-  }
-  h5.search-title,
-  h2.city-title,
-  h5.search-card,
-  h5.recent-searches,
-  h4.forecast-title,
-  div.input-field,
-  div.dropdown,
-  div.logo-col {
+    flex-wrap: wrap;
+    justify-content: center;
     text-align: center;
+  }
+  table.location-specs,
+  #forecast {
+    flex-direction: column;
   }
   .forecast-content {
     margin-bottom: 0.75rem;
