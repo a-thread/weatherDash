@@ -127,7 +127,7 @@ $(document).ready(function () {
   });
 
   // making buttons for each recent search input
-  var history = JSON.parse(window.localStorage.getItem("history")) || [];
+  var history = JSON.parse(window.localStorage.getItem("history")) || ["04101"];
   for (var i = [history.length - 5]; i < history.length; i++) {
     // limiting the buttons to 5
     makeRow(history[i]);
