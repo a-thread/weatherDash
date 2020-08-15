@@ -1,4 +1,5 @@
 # 06 Server-Side APIs: Weather Dashboard
+![license](https://img.shields.io/github/license/a-thread/Weather-API-Aiden)
 
 ### [My weatherDash Site](https://a-thread.github.io/Weather-API-Aiden/)
 
