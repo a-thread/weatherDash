@@ -9,8 +9,8 @@
 
 ### Technologies Used
 - OpenWeather APIs:
-  > Current Weather API
-  > One Call API
+  >1. Current Weather API
+  >2. One Call API
 - Moment.js
 - Materialize
 - Javascript
