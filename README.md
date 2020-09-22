@@ -1,7 +1,7 @@
 # 06 Server-Side APIs: Weather Dashboard
 ![license](https://img.shields.io/github/license/a-thread/Weather-API-Aiden)
 
-### [My weatherDash Site](https://a-thread.github.io/Weather-API-Aiden/)
+### Deployed App: [weatherDash](https://a-thread.github.io/Weather-API-Aiden/)
 
 ### Description
 **weatherDash** is a weather dashboard that displays current weather data as well as a five day forecast for a chosen city via user input. The user is able to input their city by zip code to return current and upcoming weather data including: temperature, humidity, wind speed, and UV index. 
